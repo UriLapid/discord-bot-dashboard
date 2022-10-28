@@ -4,25 +4,31 @@ import { Button } from "@mui/material";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [state, setState] = useState("amongus");
+  const [funFact, setFunFact] = useState("amongus");
 
   const [isLightMode, setIsLightMode] = useState(false);
+
   const clickHandler = async () => {
     const response = await fetch("https://catfact.ninja/fact");
     const json = await response.json();
-    setState(json.fact);
+    setFunFact(json.fact);
   };
+
   useEffect(() => {
     clickHandler();
     setIsLightMode(JSON.parse(localStorage.getItem("LightMode")));
   }, []);
-  console.log(isLightMode);
+  
   return (
-    <div className="Container" style={ {
-      backgroundColor: isLightMode? "#ffffff" : "#707070",
-    } }>
+    <div
+      className="Container"
+      style={{
+        backgroundColor: isLightMode ? "#ffffff" : "#0f0f0f",
+        color: isLightMode? "black" : "white",
+      }}
+    >
       <div className="Header">
-        <Navbar isLightMode={isLightMode} setIsLightMode={setIsLightMode}/>
+        <Navbar isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
       </div>
       <div className="App">
         <Button
@@ -33,7 +39,9 @@ function App() {
         >
           fetch me their souls
         </Button>
-        <div className="state">{state}</div>
+        <div className="FunFact">
+          {funFact}
+        </div>
       </div>
     </div>
   );

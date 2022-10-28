@@ -4,6 +4,7 @@
     width: 100%;
     z-index: 10;
     height: 7%;
+    justify-content: space-between;
 }
 
 .ModeChanger {
