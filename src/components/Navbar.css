@@ -1,0 +1,12 @@
+.Navbar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    height: 7%;
+}
+
+.ModeChanger {
+    display: flex;
+    margin-left: auto;
+}
