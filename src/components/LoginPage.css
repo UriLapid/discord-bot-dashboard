@@ -1,0 +1,8 @@
+.LoginPage {
+    display: flex;
+    justify-content: center;
+}
+
+#DiscordLogin {
+    background-color: #424549;
+}

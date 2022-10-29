@@ -3,8 +3,10 @@ import "./Navbar.css";
 import { Button } from "@mui/material";
 import { LightMode } from "@mui/icons-material";
 import { DarkMode } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ isLightMode, setIsLightMode }) => {
+  const navigation = useNavigate();
   return (
     <div
       className="Navbar"
@@ -25,7 +27,9 @@ const Navbar = ({ isLightMode, setIsLightMode }) => {
           <LightMode sx={{ color: "white" }} />
         )}
       </Button>
-        <Button className="Login" onClick={() => {}}>
+        <Button className="Login" onClick={() => {
+          navigation("/login");
+        }}>
           Login
         </Button>
     </div>
